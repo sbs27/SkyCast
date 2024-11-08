@@ -1,11 +1,11 @@
 import { useState, useEffect, ChangeEvent } from 'react';
-import { optionType } from '../types';
+import { optionType, forecastType } from '../types';
 
 // Define the return type for the hook
 type UseForecastReturnType = {
   term: string;
   options: optionType[];
-  forecast: any | null;
+  forecast: forecastType | null;
   onInputChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onOptionSelect: (option: optionType) => void;
   onSubmit: () => void;
@@ -15,7 +15,7 @@ const useForecast = (): UseForecastReturnType => {
   const [term, setTerm] = useState<string>('');
   const [city, setCity] = useState<optionType | null>(null);
   const [options, setOptions] = useState<optionType[]>([]);
-  const [forecast, setForecast] = useState<any>(null);
+  const [forecast, setForecast] = useState<forecastType | null>(null);
 
   const getSearchOptions = (value: string) => {
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -45,10 +45,19 @@ const useForecast = (): UseForecastReturnType => {
   const getForecast = (city: optionType) => {
     const apiKey = process.env.REACT_APP_API_KEY;
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${city.lat}&lon=${city.lon}&appid=${apiKey}`
     )
       .then((res) => res.json())
-      .then((data) => setForecast(data));
+      .then((data) => {
+        const forecastData = {
+          ...data.city,
+          list: data.list.slice(0, 16), // Get the first 16 forecasts
+        };
+        setForecast(forecastData); // Corrected here: Now the forecast data is properly passed to setForecast
+      })
+      .catch((error) => {
+        console.error("Error fetching forecast data:", error);
+      });
   };
 
   const onSubmit = () => {
@@ -78,4 +87,3 @@ const useForecast = (): UseForecastReturnType => {
 };
 
 export default useForecast;
-
