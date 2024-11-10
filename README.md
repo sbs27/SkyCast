@@ -16,13 +16,7 @@
     border-radius:10px;
     font-size:0.85rem;
     font-weight:600;">Official API Docs</a> |
-<a href="https://youtu.be/6MKFKwwhbNo" target="_blank" rel="noopener"
-    style="padding:0.35rem 0.7rem;
-    color: black;
-    background: #FE938C;
-    border-radius:10px;
-    font-size:0.85rem;
-    font-weight:600;">YouTube Video</a> 
+
 </div>
 
 ---
