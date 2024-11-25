@@ -1,45 +1,65 @@
-# TypeScript Weather API
----
-<div>
-<b>Quick menu:</b>
+# SkyCast 🌤️
 
-<a href="https://openweathermap.org/api" target="_blank" rel="noopener"
-    style="padding:0.35rem 0.7rem;
-    color: black;
-    background: #F1DEDE;
-    border-radius:10px;
-    font-size:0.85rem;
-    font-weight:600;">Official API Docs</a> |
+SkyCast is a sleek and intuitive weather forecasting application built with React, TypeScript, and the OpenWeatherMap API. It allows users to search for a city and view detailed weather information, including temperature, humidity, visibility, and wind speed, all in a user-friendly interface.
 
-</div>
+## Features
 
----
+- **Search by City:** Quickly search for any city and get accurate weather forecasts.
+- **Detailed Forecasts:** View hourly and daily weather details, including temperature, weather conditions, and other key metrics.
+- **Dynamic Icons:** Displays weather icons matching the current conditions for easy recognition.
+- **Responsive Design:** Works seamlessly across desktop and mobile devices.
 
-## Description
+## Technologies Used
 
-<p>The <b>Weather API Challenge</b> in TypeScript ✨ project is the most longed for and it is here! We will dive intro ReactJS, TypeScript, Fetch and TailwindCSS. We will learn how to use react with typescript (very typescript beginner friendly!) and will learn how to fetch data from an api in the context of react typescript.</p>
+- **React:** For building the user interface.
+- **TypeScript:** For type safety and improved developer experience.
+- **Vite:** A fast build tool and development server.
+- **OpenWeatherMap API:** For fetching real-time weather data.
+- **Vercel:** For deployment.
 
-<p>In this project we will work with a search field that listens to the user's input and makes an API call to get a suggestion of top 5 locations the user might be looking for. Once the user submits the search we will make another api call and get the user the weather data ✨</p>
+## Live Demo
 
-### Tech stack
-```
-Core:
-- ReactJS
-- TypeScript
-- TailwindCSS
+Check out the live version of SkyCast here: [SkyCast on Vercel](https://sky-cast-ecru.vercel.app/)
 
-Communication tool:
-- fetch
-```
+## Installation and Setup
 
-### Prerequisites
-```
-Knowledge level: 
-A typescript beginner friendly challenge! Enough if you are familiar with reactJS or if you're willing to challenge yourself.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sbs27/SkyCast.git
+   cd SkyCast
+   ```
 
-Tech: 
-a computer/laptop to copy the files to with a code editor of your choice
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Add your API key:
+   - Rename the `.env.example` file to `.env`.
+   - Add your OpenWeatherMap API key to the `REACT_APP_API_KEY` variable.
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:5173` to view the app.
+
+## Deployment
+
+SkyCast is deployed on Vercel for easy access and scalability. To deploy the project yourself:
+
+1. Commit your code to a GitHub repository.
+2. Connect your repository to Vercel.
+3. Follow the steps in the Vercel dashboard to deploy your project.
+
+## Contributing
+
+If you'd like to contribute, feel free to fork the repository and submit a pull request. Contributions are welcome!
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Preview
 <img src="/preview.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
