@@ -61,5 +61,4 @@ If you'd like to contribute, feel free to fork the repository and submit a pull 
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
-## Preview
-<img src="/preview.png" height="500" style="border-radius:10px;margin-bottom:1rem;" />
+
